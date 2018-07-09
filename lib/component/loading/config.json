@@ -1,0 +1,9 @@
+{
+    "contents": [],
+    "styles": ["style.css"],
+    "scripts": [],
+    "properties": {
+        "style": ["timer","typing_loader","location_indicator","dashboard","battery","magnifier","help","eye","coffee_cup","square","circle","cloud"],
+        "theme": ["light","dark"]
+    }
+}

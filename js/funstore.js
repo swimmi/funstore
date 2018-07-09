@@ -1,24 +1,24 @@
 class BaseComponent {
 
-    
     constructor(name, container, parameters) {
         this.name = name;
         this.container = $(container);
         this.parameters = parameters;
+        this.properties = {};
         this.basePath = "./lib/component/";
         this.path = this.basePath + this.name + "/";
+        this.configFile = this.path + "config.json";
     }
 
     config() {
-
-        var config = this.path + "config.json";
         var fun = this;
-        $.getJSON(config, function(data) {
+        $.getJSON(this.configFile, function(data) {
+            fun.configData = data;
             $.each(data.styles, function(_, file) {
-                fun.insertStyle(`css/${fun.path}${file}`);
+                insertStyle(`${fun.path}css/${file}`);
             });
             $.each(data.scripts, function(_, file) {
-                fun.insertScript(`js/${fun.path}${file}`);
+                insertScript(`${fun.path}js/${file}`);
             });
         });
     }
@@ -31,12 +31,5 @@ function insertStyle(file) {
 }
 function insertScript(file) {
     var script = `<script src='${file}' ></script>`;
-    $($("body")[0]).before(script);
-}
-
-function useComponent(arrays) {
-    var array = arrays.split(' ');
-    $.each(array, function(_, item) {
-        $.getScript("./lib/component/" + item + "/main.js");
-    });
+    $($("body")[0]).append(script);
 }
