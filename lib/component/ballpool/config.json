@@ -1,5 +1,4 @@
 {
-    "contents": [],
     "styles": [],
     "scripts": ["protoclass.js","box2d.js","script.js"],
     "properties": []

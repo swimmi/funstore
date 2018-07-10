@@ -1,5 +1,4 @@
 {
-    "contents": ["content.html"],
     "styles": ["style.css"],
     "scripts": ["script.js"],
     "properties": []

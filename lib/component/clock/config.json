@@ -1,5 +1,4 @@
 {
-    "content": ["content.html"],
     "styles": ["style.css"],
     "scripts": ["moment.min.js", "script.js"],
     "properties": {

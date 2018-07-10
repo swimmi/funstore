@@ -8,6 +8,7 @@ class BaseComponent {
         this.basePath = "./lib/component/";
         this.path = this.basePath + this.name + "/";
         this.configFile = this.path + "config.json";
+        this.srcFile = this.path + "content.html";
     }
 
     config() {
@@ -21,6 +22,10 @@ class BaseComponent {
                 insertScript(`${fun.path}js/${file}`);
             });
         });
+    }
+
+    load(todo) {
+        this.container.load(this.srcFile, todo);
     }
 }
 
